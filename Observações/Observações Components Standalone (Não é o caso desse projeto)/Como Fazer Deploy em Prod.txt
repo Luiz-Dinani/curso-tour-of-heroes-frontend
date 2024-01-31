@@ -1,0 +1,5 @@
+Logar no vercel.com com o GitHub
+Adicionar o repositório do projeto se ele não já não estiver adicionado
+Ir na aba Build and Update Settings e no Output Directory colocar o que está no outputPath do angular.json
+Clique em deploy no final da página
+Pronto!

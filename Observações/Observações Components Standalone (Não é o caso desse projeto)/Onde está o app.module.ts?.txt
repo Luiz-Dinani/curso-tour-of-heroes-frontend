@@ -1,0 +1,10 @@
+No Angular 17 não é mais usado o app.module.ts por causa a propriedade Standalone do component, essa propriedade torna muito mais fazer imports
+e usar o component em outro lugar.
+
+In general, you can imagine a Standalone Component as a component with its very own NgModule
+
+Na imagem O que é um standalone component.png a versão Standalone é representada na esquerda, enquanto a component + module está na direita
+
+
+Mais informações em:
+https://www.angulararchitects.io/en/blog/angulars-future-without-ngmodules-lightweight-solutions-on-top-of-standalone-components/

@@ -1,0 +1,1 @@
+No Angular 15 essas coisas foram retiradas porque parece que a maior parte das vezes elas não eram usadas, então deixaram para o dev colocar se quisesse

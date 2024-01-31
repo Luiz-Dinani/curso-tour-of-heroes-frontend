@@ -1,0 +1,21 @@
+Módulos inseridos no app.module.ts podem ser usados globalmente sem precisar importar mais de uma vez
+
+
+Pipes
+  São modificadores de um atributo de um component no html, como seria o caso do méto do ToUpper() no C#
+
+  <h2>{{ hero.name | uppercase }} Details</h2>
+    O | uppercase faz com que o atributo name da interface Hero seja exibido em maiúsculo
+
+
+Two-Way Data Binding
+  Quando quisermos que o usuário possa fazer mudanças no nosso component que pode já ter tido um valor definido por nós previamente
+  <div>
+    <label for="name">Hero's Name:</label>
+    <input id="name" placeholder="Insert Hero's Name" [(ngModel)]="hero.name">
+  </div>
+
+  OBS: Para usar o ngModel é necessário importar o FormsModule no app.module.ts
+
+  Nesse caso o nome que o usuário inserir substituirá o "Wolverine" previamente definido por nós
+  Mostramos o valor do atributo + usuário pode mudar o valor do atributo = Two Data Binding
