@@ -34,3 +34,46 @@ O atributo que queremos mudar deve ter o Decorator @Input() para que isso funcio
       hero?: Hero
     }
 
+Observable
+  É o conceito de pattern que você já conhece, mas aqui ele é um método usado para fazer requisições assíncronas, pelo que eu entendi ele é tipo uma task
+  Dentro da nossa HeroService nós temos um método que retorna um Observable de uma lista de Heroes (Me parece muito com um Task<List<Heroes>>)
+
+  export class HeroService {
+
+    getHeroes(): Observable<Hero[]>{
+      const heroes = of(HEROES);
+      return heroes;
+    }
+  }
+
+  O of é o que torna a lista HEROES um Observable, ele vem do pacote rxjs
+  Para lermos a lista retornada por esse método no nosso component precisamos nos inscrever no Observable (Igual o pattern design diz)
+
+  getHeroes(): void {
+    this.heroService.getHeroes().subscribe(
+      heroes => this.heroes = heroes
+    );
+  }
+
+  Após nos inscrever-mos usando o método subscribe usamos uma função anônima para atribuir o valor recebido da requisição Observada na nossa variavel heroes
+  (this.heroes)
+
+
+Lembra do AddScoped e AddSingleton da startup.cs?
+  Então, eu finalmente aprendi a diferença entra elas:
+    O AddSingleton vai criar uma única service para todo mundo que decida usar ela, então vamos supor que uma service singleton tenha uma variavel varA
+      Se eu usar essa service singleton em uma service123 e alterar o valor da para varA = "Valor Alterado" ela terá esse valor em todas as services que usam a serviceSingleton
+      Então quando eu for usar a varA na serviceABC o valor de varA será "Valor Alterado" e se eu fiz varA = "Valor Alterado Denovo" o valor de varA na service123 será também "Valor Alterado Denovo"
+
+    O AddScoped faz com que isso não aconteça, criando uma intância de service nova para todo ESCOPO que ela for utilizada, então não importa o que eu fizer na serviceABC o valor de varA não será alterado na service123
+
+  Me parece que o singleton é usado principalmente em classes de mensageria, para não haver diferença nas mensagens entre as services que estão lendo a fila
+
+
+
+
+
+
+
+
+
