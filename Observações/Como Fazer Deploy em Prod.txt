@@ -3,3 +3,5 @@ Adicionar o repositório do projeto se ele não já não estiver adicionado
 Ir na aba Build and Update Settings e no Output Directory colocar o que está no outputPath do angular.json
 Clique em deploy no final da página
 Pronto!
+
+O deploy do projeto pode ser visto em https://curso-tour-of-heroes-frontend-uq6g.vercel.app/
