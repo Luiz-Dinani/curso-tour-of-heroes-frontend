@@ -19,3 +19,18 @@ Two-Way Data Binding
 
   Nesse caso o nome que o usuário inserir substituirá o "Wolverine" previamente definido por nós
   Mostramos o valor do atributo + usuário pode mudar o valor do atributo = Two Data Binding
+
+
+
+Quando temos uma propriedade em um component e quisermos alterar uma propriedade dele em outro component usamos colchetes na tag do component
+O atributo que queremos mudar deve ter o Decorator @Input() para que isso funcione
+
+  Dentro do HeroesComponent estamos chamando o component HeroDetail que por sua vez possui um atributo chamado hero, que receberá o valor de selectedHero
+    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+  Dentro do HeroDetail o atributo hero tem o Decorator @Input()
+    export class HeroDetailComponent {
+      @Input()
+      hero?: Hero
+    }
+
